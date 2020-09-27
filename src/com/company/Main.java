@@ -20,7 +20,7 @@ public class Main {
 //        ausgabeAlles();
 //        GutscheinFilter.sucheGutscheineNachNummer(new BigInteger("123456789012345678"));
 //        ausgabeFindeAlleGutscheineEinesSpielers("113-88");
-        GutscheinFilter.sortiereGutscheineNachNummer();
+        ausgabeSortiereGutscheineNachNichtEingeloestenNummern();
     }
 
     public static void ausgabeGutscheineAusgegeben() {
@@ -69,6 +69,14 @@ public class Main {
             System.out.println("Auszahlbetrag: " + gutschein.getAuszahlbetrag());
             System.out.println("Auszahldatum: " + simpleDateFormat.format(gutschein.getDatum()));
             System.out.println("\n");
+        }
+    }
+
+    public static void ausgabeSortiereGutscheineNachNichtEingeloestenNummern() {
+        List<Gutschein> gutscheine = GutscheinFilter.sortiereGutscheineNachNichtEingeloestenNummern();
+        System.out.println("--->Gutscheinnummern<---");
+        for (Gutschein gutschein :gutscheine) {
+            System.out.println(gutschein.getNummer());
         }
     }
 }

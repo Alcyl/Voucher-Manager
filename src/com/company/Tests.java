@@ -49,6 +49,11 @@ public class Tests {
 
     @Test
     public void testSortiereNachGueltigenGutscheinNummern() {
+        GutscheinFilter.sortiereGutscheineNachNichtEingeloestenNummern();
+        Gutschein test0 = GutscheinFilter.gutscheineNichtEingeloest.get(0);
+        Gutschein test1 = GutscheinFilter.gutscheineNichtEingeloest.get(1);
 
+        assertEquals(new BigInteger("111122223333444455"), test0.getNummer(), "vergleicht Gutscheinnummern, der nicht eingelösten Gutscheine");
+        assertEquals(new BigInteger("123412341234123412"), test1.getNummer(), "vergleicht Gutscheinnummern, der nicht eingelösten Gutscheine");
     }
 }
