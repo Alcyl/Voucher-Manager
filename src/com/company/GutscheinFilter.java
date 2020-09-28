@@ -24,8 +24,6 @@ public class GutscheinFilter {
 
     public static void sucheGutscheineNachNummer(BigInteger gutscheinNummer) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
-        // TODO: Error handling
-//        int zaehler = 1;
         for (Gutschein gutschein : gutscheineEingeloest) {
             if (gutschein.getNummer().equals(gutscheinNummer)) {
                 gefundenerGutschein.setNummer(gutschein.getNummer());
@@ -41,12 +39,8 @@ public class GutscheinFilter {
                     }
                 }
             }
-//            else if (zaehler == gutscheineEingeloest.size()) {
-//                System.out.println("Gutscheinnummer wurde nicht gefunden!");
-//            }
-//            zaehler++;
         }
-//        TODO: NullPointerException
+
         if (gefundenerGutschein.getNummer().equals(gutscheinNummer)) {
             System.out.println("--->Gefundener Spieler<---\n" +
                     gefundenerSpieler.getId() + "\t" +
@@ -63,19 +57,12 @@ public class GutscheinFilter {
         }
     }
 
-
     public static List<Gutschein> findeAlleGutscheineEinesSpielers(String id) {
-        // TODO: Error handling, Id leer oder nicht vorhanden siehe oben
-//        int zaehler = 1;
         List<Gutschein> gutscheine = new ArrayList<>();
         for (Gutschein gutschein : gutscheineAusgegeben) {
             if (gutschein.getSpielerId().equals(id)) {
                 gutscheine.add(gutschein);
             }
-//            else if (zaehler == gutscheineAusgegeben.size()) {
-//                System.out.println("Keine Gutscheine gefunden!");
-//            }
-//            zaehler++;
         }
         return gutscheine;
     }
@@ -86,7 +73,6 @@ public class GutscheinFilter {
                 gutscheineNichtEingeloest.add(gutschein);
             }
         }
-//        Collections.sort(gutscheineNichtEingeloest, new Sort());
         return gutscheineNichtEingeloest;
     }
 

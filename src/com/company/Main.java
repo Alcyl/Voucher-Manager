@@ -17,10 +17,11 @@ public class Main {
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
 
     public static void main(String[] args) {
-//        ausgabeAlles();
+        // Bitte die Methode einkommentieren, die aufgerufen werden soll
+        ausgabeAlles();
 //        GutscheinFilter.sucheGutscheineNachNummer(new BigInteger("123456789012345678"));
 //        ausgabeFindeAlleGutscheineEinesSpielers("113-88");
-        ausgabeSortiereGutscheineNachNichtEingeloestenNummern();
+//        ausgabeSortiereGutscheineNachNichtEingeloestenNummern();
     }
 
     public static void ausgabeGutscheineAusgegeben() {
@@ -74,7 +75,7 @@ public class Main {
 
     public static void ausgabeSortiereGutscheineNachNichtEingeloestenNummern() {
         List<Gutschein> gutscheine = GutscheinFilter.sortiereGutscheineNachNichtEingeloestenNummern();
-        System.out.println("--->Gutscheinnummern<---");
+        System.out.println("--->Gutscheinnummern NICHT EINGELÖST<---");
         for (Gutschein gutschein :gutscheine) {
             System.out.println(gutschein.getNummer());
         }
